@@ -7,7 +7,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.1",
     "autoprefixer": "^10.3.7",
+    "clsx": "^1.1.1",
     "framer-motion": "^4.1.17",
     "postcss": "^8.3.9",
     "react": "^17.0.0",
