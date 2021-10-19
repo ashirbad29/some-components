@@ -1,14 +1,15 @@
-import { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import Home from './pages/Home';
+import ModalPage from './pages/ModalPage';
 
 function App() {
-	const [count, setCount] = useState(0);
-
 	return (
-		<div className='w-full h-screen flex items-center justify-center'>
-			<h1 className='text-2xl text-pink-500'>Hello world</h1>
-		</div>
+		<Router>
+			<main>
+				<Route exact path='/' component={Home} />
+				<Route exact path='/modal' component={ModalPage} />
+			</main>
+		</Router>
 	);
 }
 
