@@ -32,13 +32,17 @@ const Modal: React.FC<modalPropType> = ({
 						opacity: 1,
 						scale: 1,
 						transition: {
-							duration: 0.3,
+							duration: 0.4,
 							type: 'spring',
 						},
 					}}
 					exit={{
 						opacity: 0,
-						// scale: 0.8,
+						scale: 0.75,
+						transition: {
+							ease: 'easeIn',
+							duration: 0.15,
+						},
 					}}
 					className='fixed inset-0 z-10 overflow-y-auto'
 				>
