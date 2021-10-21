@@ -8,6 +8,7 @@ type modalPropType = {
 	isOpen: boolean;
 	children: React.ReactNode;
 	className?: string;
+	overlay?: boolean;
 	onClose?: () => void;
 };
 
@@ -46,8 +47,27 @@ const Modal: React.FC<modalPropType> = ({
 					}}
 					className='fixed inset-0 z-10 overflow-y-auto'
 				>
-					<div className='min-h-screen text-center'>
-						<Dialog.Overlay className='fixed inset-0' />
+					<div className='min-h-screen flex items-center justify-center'>
+						<Dialog.Overlay
+							className='fixed inset-0 bg-black bg-opacity-30'
+							as={motion.div}
+							initial={{
+								opacity: 0,
+								scale: 1,
+							}}
+							animate={{
+								opacity: 1,
+								transition: {
+									duration: 0.3,
+								},
+							}}
+							exit={{
+								opacity: 0,
+								transition: {
+									duration: 0.1,
+								},
+							}}
+						/>
 						{/* This element is to trick the browser into centering the modal contents. */}
 						<span
 							className='hidden sm:inline-block sm:align-middle sm:h-screen'
